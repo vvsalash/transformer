@@ -1,0 +1,23 @@
+model:
+  layers_count: 6
+  embed_dim: 512
+  ff_dim: 1024
+  heads_count: 8
+  dropout: 0.1
+
+batch_size: 64
+
+optimizer:
+  scale_factor: 1
+  warmup: 500
+  lr: 0.0001
+  beta1: 0.9
+  beta2: 0.99
+
+epochs: 10
+
+output_file: "output.txt"
+path: "Insert path"
+run_name: "model_6_512_1024_8"
+min_freq: 10
+
