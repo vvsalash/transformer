@@ -60,7 +60,7 @@ class PositionalEncoder(nn.Module):
         pos_features = torch.zeros(max_length, embed_dim)
 
         positions = torch.arange(0, max_length).unsqueeze(1)
-        frequencies = torch.exp(torch.arange(0, embed_dim, 2) * (-log(10000.0) / embed_dim)).unsqueeze(0)
+        frequencies = torch.exp(torch.arange(0, embed_dim, 2) * (-log(10000.0) / embed_dim))
         arguments = positions * frequencies
 
         pos_features[:, 0::2] = torch.sin(arguments)

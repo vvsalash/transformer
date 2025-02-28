@@ -38,7 +38,7 @@ class BLEULossHandler:
 
             bleu = sacrebleu.corpus_bleu(reference_sentences, [predicted_sentences]).score
 
-        loss = self.criterion(predicted_logits.transpose(1, 2), target_tokens.long())
+        loss = self.criterion(predicted_probs.transpose(1, 2), target_tokens.long())
         loss.backward()
 
         if self.optimizer is not None:
